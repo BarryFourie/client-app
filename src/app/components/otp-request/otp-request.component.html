@@ -1,0 +1,17 @@
+<div>
+    <h1>OTP!</h1>
+    <h2>Request an awesome one-time password</h2>
+    <div class="input-container">
+        <label for="email">Email Address</label>
+        <input type="email" [(ngModel)]="email" placeholder="..." [className]="status">
+        <app-response-box [message]="message" [status]="status"></app-response-box>
+    </div>
+    <div class="btn-container">
+        <app-entrostat-btn [loading]="loading['sendOtp']" [disabled]="!email" text="Send OTP" (clicked)="sendOtp()">
+        </app-entrostat-btn>
+        <app-entrostat-btn [loading]="loading['resendOtp']" [disabled]="!email" text="Resend OTP" (clicked)="resendOtp()">
+        </app-entrostat-btn>
+        <app-entrostat-btn text="Next" (clicked)="next()">
+        </app-entrostat-btn>
+    </div>
+</div>

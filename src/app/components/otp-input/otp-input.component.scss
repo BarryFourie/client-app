@@ -1,0 +1,41 @@
+.input-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+
+    label {
+        line-height: 22px;
+    }
+
+    .box-group {
+        display: flex;
+        justify-content: flex-start;
+
+
+        input {
+            background-color: #fff;
+            border: 0px;
+            width: 28px;
+            border-bottom: 2px solid rgb(26, 33, 80);
+            box-sizing: border-box;
+            color: rgb(26, 33, 80);
+            cursor: text;
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 6px;
+            height: 28px;
+            line-height: 24px;
+            margin-right: 5px;
+        }
+
+        input.error {
+            border-bottom: 2px solid red;
+        }
+
+        input:focus {
+            outline: none
+        }
+    }
+}

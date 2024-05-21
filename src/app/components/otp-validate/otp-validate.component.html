@@ -1,0 +1,16 @@
+<div>
+    <h1>Validation!</h1>
+    <h2>Is your awsome one-time password valid?</h2>
+    <div class="input-container">
+        <label for="email">Email Address</label>
+        <input type="email" [(ngModel)]="email" placeholder="..." [className]="status">
+        <app-otp-input (changed)="password = $event"></app-otp-input>
+        <app-response-box [message]="message" [status]="status"></app-response-box>
+    </div>
+    <div class="btn-container">
+        <app-entrostat-btn [loading]="loading['validate']" [disabled]="!email" text="Validate" (clicked)="validate()">
+        </app-entrostat-btn>
+        <app-entrostat-btn text="Back" (clicked)="back()">
+        </app-entrostat-btn>
+    </div>
+</div>

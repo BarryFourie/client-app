@@ -1,0 +1,57 @@
+:host {
+    color:#fff;
+    width: 100%;
+
+    h1 {
+        font-size: 4.3rem;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+
+    .input-container {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        max-width: 500px;
+
+        label {
+            line-height: 22px;
+        }
+
+        input {
+            background-color: #fff;
+            border: 0px;
+            width: 100%;
+            border-bottom: 2px solid rgb(26, 33, 80);
+            box-sizing: border-box;
+            color: rgb(26, 33, 80);
+            cursor: text;
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 6px;
+            height: 28px;
+            line-height: 24px;
+        }
+
+        input.error{
+            border-bottom: 2px solid red;
+        }
+
+        input:focus {
+            outline: none
+        }
+    }
+    .btn-container{
+        display: flex;
+        justify-content: flex-start;
+        * {
+            margin-right: 20px;
+        }
+    }
+}
