@@ -1,0 +1,21 @@
+.response-box {
+    padding: 5px;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+    border: 1px;
+    font-weight: 600;
+}
+
+.response-box.success {
+    color: rgb(0, 242, 57);
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 242, 57);
+}
+
+.response-box.error {
+    color: red;
+    background-color: #fff;
+    border-color: #fff;
+}

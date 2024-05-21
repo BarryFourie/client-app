@@ -1,0 +1,56 @@
+.btn {
+    background-color: rgb(0, 242, 57);
+    color: rgb(26, 33, 80);
+    border: 2px solid rgb(0, 242, 57);
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 9999px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    height: 52px;
+    line-height: 24px;
+    margin-top: 16px;
+    padding: 12px 40px;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(0, 242, 57);
+    color: rgb(0, 242, 57);
+}
+
+.btn:disabled {
+    background-color: rgb(0, 244, 175);
+    border: 2px solid rgb(0, 244, 175);
+    color:rgb(26, 33, 80);
+    cursor:auto;
+}
+
+.btn:hover:disabled {
+    background-color: rgb(0, 244, 175);
+    border: 2px solid rgb(0, 244, 175);
+    color:rgb(26, 33, 80);
+    cursor:auto;
+}
+
+
+.spin {
+    border-top: 3px solid rgb(26, 33, 80);
+    border-radius: 50%;
+    width: 20px;
+    margin: auto;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

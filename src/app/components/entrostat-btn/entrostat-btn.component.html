@@ -1,0 +1,9 @@
+<button (click)="onClick()" class="btn" [disabled]="disabled || loading" [style.width]="width">
+    <ng-container *ngIf="loading">
+        <div class="spin"></div>
+    </ng-container>
+    <ng-container *ngIf="!loading">
+    {{text}}
+    </ng-container>
+</button>
+
