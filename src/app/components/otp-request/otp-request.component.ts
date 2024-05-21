@@ -18,17 +18,18 @@ export class OtpRequestComponent {
   status: 'success' | 'error' | 'info' = 'info';
   loading: { [key: string]: boolean } = { sendOtp: false, resendOtp: false };
 
-  constructor(private authService: AuthService, private router:Router) {
+  constructor(private authService: AuthService, private router: Router) {
 
   }
 
   public sendOtp() {
     this.loading['sendOtp'] = true;
-    this.authService.sendOtp(this.email).subscribe((response)=> {
+    this.authService.sendOtp(this.email).subscribe((response) => {
       this.message = response.message;
       this.status = 'success';
       this.loading['sendOtp'] = false;
-    }, (error) =>{
+      this.router.navigate(['/validate-otp'], { queryParams: { email: this.email } });
+    }, (error) => {
       this.message = error.error.message;
       this.status = 'error';
       this.loading['sendOtp'] = false
@@ -37,18 +38,19 @@ export class OtpRequestComponent {
 
   public resendOtp() {
     this.loading['resendOtp'] = true;
-    this.authService.resendOtp(this.email).subscribe((response)=> {
+    this.authService.resendOtp(this.email).subscribe((response) => {
       this.message = response.message;
       this.status = 'success';
       this.loading['resendOtp'] = false;
-    }, (error) =>{
+      this.router.navigate(['/validate-otp'], { queryParams: { email: this.email } });
+    }, (error) => {
       this.message = error.error.message;
       this.status = 'error';
       this.loading['resendOtp'] = false
     })
   }
 
-  public next(){
-    this.router.navigate(['/validate-otp'])
+  public next() {
+    this.router.navigate(['/validate-otp'], { queryParams: { email:this.email } });
   }
 }

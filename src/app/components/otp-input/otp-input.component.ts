@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, QueryList, ViewChildren, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
 export class OtpInputComponent {
   otp: string[] = new Array(6).fill('');
   @Output() changed = new EventEmitter<string>();
-  @ViewChildren('otpBox') otpBoxes!:QueryList<ElementRef>;
+  @ViewChildren('otpBox') otpBoxes!: QueryList<ElementRef>;
+  @Input() status: 'error' | 'success' | 'info' = 'info';
 
   paste($event: ClipboardEvent) {
     $event.preventDefault();
@@ -20,11 +21,11 @@ export class OtpInputComponent {
     const otpArray = data.split('').slice(0, 6)
 
     for (let index = 0; index < 6; index++) {
-     if(isNaN(Number(otpArray[index]))){
-      continue;
-     }else{
-      this.otp[index] = otpArray[index] || ''
-     }
+      if (isNaN(Number(otpArray[index]))) {
+        continue;
+      } else {
+        this.otp[index] = otpArray[index] || ''
+      }
     }
 
     this.changed.emit(this.otp.join(''))
@@ -33,7 +34,7 @@ export class OtpInputComponent {
   input($event: any, index: number) {
     const input = $event.target;
 
-    if(isNaN(input.value)){
+    if (isNaN(input.value)) {
       input.value = '';
       return
     }

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EntrostatBtnComponent } from '@components/entrostat-btn/entrostat-btn.component';
 import { OtpInputComponent } from '@components/otp-input/otp-input.component';
 import { ResponseBoxComponent } from '@components/response-box/response-box.component';
@@ -13,15 +13,21 @@ import { AuthService } from '@services/auth.service';
   templateUrl: './otp-validate.component.html',
   styleUrl: './otp-validate.component.scss'
 })
-export class OtpValidateComponent {
+export class OtpValidateComponent implements OnInit {
   email: string = '';
   message: string = '';
   password: string = '';
   status: 'success' | 'error' | 'info' = 'info';
   loading: { [key: string]: boolean } = { validate: false };
 
-  constructor(private authService: AuthService, private router:Router) {
+  constructor(private authService: AuthService, private router:Router, private activatedRoute:ActivatedRoute) {
 
+  }
+
+  public ngOnInit(): void {
+    this.activatedRoute.queryParamMap.subscribe((params)=>{
+      this.email = params.get('email') || '';
+    })
   }
 
   public validate() {

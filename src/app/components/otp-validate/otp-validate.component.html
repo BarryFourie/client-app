@@ -4,7 +4,7 @@
     <div class="input-container">
         <label for="email">Email Address</label>
         <input type="email" [(ngModel)]="email" placeholder="..." [className]="status">
-        <app-otp-input (changed)="password = $event"></app-otp-input>
+        <app-otp-input (changed)="password = $event" [status]="status"></app-otp-input>
         <app-response-box [message]="message" [status]="status"></app-response-box>
     </div>
     <div class="btn-container">

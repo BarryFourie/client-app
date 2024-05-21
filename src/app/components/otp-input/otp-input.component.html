@@ -1,17 +1,17 @@
 <div class="input-group">
     <label for="otp">One-Time Password</label>
     <div class="box-group">
-        <input #otpBox type="text" maxlength="1" (input)="input($event, 0)" (paste)="paste($event)"
-            [(ngModel)]="otp[0]">
-        <input #otpBox type="text" maxlength="1" (input)="input($event, 1)" (paste)="paste($event)"
-            [(ngModel)]="otp[1]">
-        <input #otpBox type="text" maxlength="1" (input)="input($event, 2)" (paste)="paste($event)"
-            [(ngModel)]="otp[2]">
-        <input #otpBox type="text" maxlength="1" (input)="input($event, 3)" (paste)="paste($event)"
-            [(ngModel)]="otp[3]">
-        <input #otpBox type="text" maxlength="1" (input)="input($event, 4)" (paste)="paste($event)"
-            [(ngModel)]="otp[4]">
-        <input #otpBox type="text" maxlength="1" (input)="input($event, 5)" (paste)="paste($event)"
-            [(ngModel)]="otp[5]">
+        <input #otpBox type="text" maxlength="1" (input)="input($event, 0)" (paste)="paste($event)" [(ngModel)]="otp[0]"
+            [className]="status">
+        <input #otpBox type="text" maxlength="1" (input)="input($event, 1)" (paste)="paste($event)" [(ngModel)]="otp[1]"
+            [className]="status">
+        <input #otpBox type="text" maxlength="1" (input)="input($event, 2)" (paste)="paste($event)" [(ngModel)]="otp[2]"
+            [className]="status">
+        <input #otpBox type="text" maxlength="1" (input)="input($event, 3)" (paste)="paste($event)" [(ngModel)]="otp[3]"
+            [className]="status">
+        <input #otpBox type="text" maxlength="1" (input)="input($event, 4)" (paste)="paste($event)" [(ngModel)]="otp[4]"
+            [className]="status">
+        <input #otpBox type="text" maxlength="1" (input)="input($event, 5)" (paste)="paste($event)" [(ngModel)]="otp[5]"
+            [className]="status">
     </div>
 </div>
