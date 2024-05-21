@@ -23,11 +23,29 @@ export class OtpRequestComponent {
   }
 
   public sendOtp() {
-
+    this.loading['sendOtp'] = true;
+    this.authService.sendOtp(this.email).subscribe((response)=> {
+      this.message = response.message;
+      this.status = 'success';
+      this.loading['sendOtp'] = false;
+    }, (error) =>{
+      this.message = error.error.message;
+      this.status = 'error';
+      this.loading['sendOtp'] = false
+    })
   }
 
   public resendOtp() {
-
+    this.loading['resendOtp'] = true;
+    this.authService.resendOtp(this.email).subscribe((response)=> {
+      this.message = response.message;
+      this.status = 'success';
+      this.loading['resendOtp'] = false;
+    }, (error) =>{
+      this.message = error.error.message;
+      this.status = 'error';
+      this.loading['resendOtp'] = false
+    })
   }
 
   public next(){

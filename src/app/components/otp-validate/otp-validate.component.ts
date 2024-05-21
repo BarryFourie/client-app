@@ -25,9 +25,17 @@ export class OtpValidateComponent {
   }
 
   public validate() {
-
+    this.loading['validate'] = true;
+    this.authService.validateOtp(this.email, this.password).subscribe((response)=> {
+      this.message = response.message;
+      this.status = 'success';
+      this.loading['validate'] = false;
+    }, (error) =>{
+      this.message = error.error.message;
+      this.status = 'error';
+      this.loading['validate'] = false
+    })
   }
-
 
   public back(){
     this.router.navigate(['/request-otp'])

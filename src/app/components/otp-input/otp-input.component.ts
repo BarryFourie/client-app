@@ -40,6 +40,6 @@ export class OtpInputComponent {
 
     this.otp[index] = input.value;
     this.otpBoxes.toArray()[index + 1].nativeElement.focus()
-    this.changed.emit();
+    this.changed.emit(this.otp.join(''));
   }
 }
